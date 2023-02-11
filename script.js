@@ -61,7 +61,7 @@ const checkRoundWin = () => {
         if(document.querySelector(`[data-index="${element[0]}"]`).dataset.status==`inactive${player}` 
         && document.querySelector(`[data-index="${element[1]}"]`).dataset.status==`inactive${player}` 
         && document.querySelector(`[data-index="${element[2]}"]`).dataset.status==`inactive${player}`) {
-                alert(`${player} wygrywa rundę`)
+                alert(`${player} wins the round`)
             roundWin(player);    
         } else if(turnCount==20) {
             draw();
@@ -78,8 +78,8 @@ const roundWin = (player) => {
     if(player == "X") pointsX++;
     else pointsO++;
     
-    document.querySelector("#playerXcount").innerHTML = `Punkty X: ${pointsX}`;
-    document.querySelector("#playerOcount").innerHTML = `Punkty O: ${pointsO}`;
+    document.querySelector("#playerXcount").innerHTML = `Points X: ${pointsX}`;
+    document.querySelector("#playerOcount").innerHTML = `Points O: ${pointsO}`;
 
     const playingField = document.querySelectorAll(".playingField");
     playingField.forEach((element) => {
@@ -95,7 +95,7 @@ const roundWin = (player) => {
 const draw = () => {
     playerSwitch();
     turnCount = 0;
-    alert("REMIS");
+    alert("it's a draw");
     const playingField = document.querySelectorAll(".playingField");
     playingField.forEach((element) => {
         setTimeout(() => {
@@ -108,10 +108,10 @@ const draw = () => {
 
 const checkWin = () => {
     if(pointsX > 1) {
-        alert("Gracz X wygrywa!")
+        alert("Player X wins!")
         location.reload();
     } else if(pointsO > 1) {
-        alert("Gracz O wygrywa!");
+        alert("Player O wins!");
         location.reload();
     }
 }

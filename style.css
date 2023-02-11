@@ -10,7 +10,7 @@
 
 body {
     overflow: hidden;
-    background: radial-gradient(circle at 35% 30%, rgb(14, 14, 14) 0%, rgb(27, 27, 27) 90.2%);
+    background-color: rgb(20, 20, 20);
 }
 
 #outercont {
